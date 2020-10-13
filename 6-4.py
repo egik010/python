@@ -33,31 +33,35 @@ class Car():
 
 class TownCar(Car):
     def show_speed(self):
-        print(F'Скорость городского астомобиля {self.speed}')
+        print(F'Скорость городского автомобиля {self.speed}')
         if self.speed > 60:
             print(F'Внимание вы первысили скорость на {self.speed - 60} км/ч')
 
+
 class SportCar(Car):
     pass
+
 
 class WorkCar(Car):
     def show_speed(self, speed):
         self.speed = speed
         print(F'Скорость рабочего астомобиля {self.speed}')
 
+
 class PoliceCar(Car):
     pass
 
-t_car = TownCar(65, 'Зеленый', 'Еда', 0)
+
+t_car = TownCar(65, 'Зеленый', 'Еда', False)
 t_car.show_speed()
 
-p_car = PoliceCar(90, 'Голубой', 'Джип', 1)
+p_car = PoliceCar(90, 'Голубой', 'Джип', True)
 if p_car.is_police:
-    print(F'Машина {p_car.color}, {p_car.name} является полчицейской машиной')
+    print(F'Машина {p_car.color}, {p_car.name} является полицейской машиной')
 else:
-    print(F'Машина {p_car.color} цвет, {p_car.name} Не является полчицейской машиной')
+    print(F'Машина {p_car.color} цвет, {p_car.name} Не является полицейской машиной')
 
-s_car = SportCar (110, 'Красный', 'бензин', 0)
+s_car = SportCar(110, 'Красный', 'бензин', False)
 print(F'У нас машина {s_car.color} цвет, {s_car.name}:')
 s_car.go()
 s_car.turn('Налево')
